@@ -88,7 +88,7 @@ error: expected unqualified-id
 
 ```cpp
 #include<iostream>
- 
+
 int main() {
   int sum=0, i=50;
 
@@ -105,7 +105,7 @@ int main() {
 ## 1.10
 ```cpp
 #include<iostream>
- 
+
 int main() {
   int sum=0, i=10;
 
@@ -120,7 +120,7 @@ int main() {
 ## 1.11
 ```cpp
 #include<iostream>
- 
+
 int main() {
   std::cout << "Please enter two number" <<std::endl;
   int v1,v2;
@@ -191,7 +191,7 @@ int main() {
     big = small;
     small = tmp;
   }
-  
+
   for( ;small!=big; ++small) {
      std::cout << small <<std::endl;
   }
@@ -211,7 +211,7 @@ for is more clear for simple condition loop, easy to detect increment condition
 
 //  error: cannot initialize a variable of type 'int' with an lvalue of
       type 'const char [6]'
-      
+
 int a = "hello";
 
 // declaration error
@@ -259,7 +259,7 @@ int main() {
       }
     }
     std::cout << currVal << " occurs "
-	      << cnt << " times " << std::endl; 
+	      << cnt << " times " << std::endl;
   }
   return 0;
 }
@@ -270,7 +270,7 @@ all same value, will keep reading from terminal until the value changes
 all different, will give result after every single input
 
 ## 1.19
-see [1.14](#1.14)
+see [1.14](#114)
 
 ## 1.20
 ```cpp
@@ -360,7 +360,24 @@ int main() {
 
 data:     
 0-201-78345-X 3 20
-{
+0-201-78345-X 3 20
+0-201-78345-X 2 25
+0-201-78346-X 1 100
+0-201-78346-X 2 99.9
+0-201-78346-X 6 89.9
+
+## 1.25
+
+```cpp
+#include <iostream>
+#include "Sales_item.h"
+
+int main() {
+  Sales_item total;
+  if (std::cin >> total) {
+    Sales_item trans;
+    while(std::cin >> trans) {
+    if(total.isbn() == trans.isbn()) {
       total += trans;
     } else {
       std::cout << total << std::endl;
@@ -374,5 +391,4 @@ data:
   }
   return 0;
 }
-
 ```
