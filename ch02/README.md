@@ -426,3 +426,41 @@ add later
 add later
 ```
 ## 2.42
+
+Sales_data.h file
+
+```cpp
+#ifndef SALES_DATA_H
+#define SALES_DATA_H
+#include <string>
+struct Sales_data {
+  std::string bookNo;
+  unsigned unit = 0;
+  double revenue = 0.0;
+};
+#endif
+
+```
+
+main file
+```cpp
+#include <iostream>
+#include <string>
+#include "Sales_data.h"
+
+int main() {
+  Sales_data book1, book2;
+  double price1, price2;
+  std::cin >> book1.bookNo >> book1.unit >> price1;
+  std::cin >> book2.bookNo >> book2.unit >> price2;
+  if(book1.bookNo == book2.bookNo) {
+    std::cout << book1.bookNo << " " << book1.unit+book2.unit
+    << " " << book1.unit * price1+book2.unit * price2
+    <<std::endl;
+    return 0;
+  } else {
+    std::cerr << "These two ibsn is not same";
+    return -1;
+  }
+}
+```
